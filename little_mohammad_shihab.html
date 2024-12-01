@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpfulIndia - Foundation</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://kit.fontawesome.com/691e1436e7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <a href="/" class="logo-link">
+                <h1>Helpful India</h1>
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <!-- Hamburger Menu Icon for Mobile -->
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <span></span> <!-- Hamburger icon -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Details Section -->
+    <section class="project-details">
+        <div class="project-video">
+            <video controls>
+                <source src="assets/videos/little kid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <h2 class="project-name">Medical Emergency</h2>
+            <p class="project-benefactor"><span id="project-benefactor">Benefactor:</span><span
+                    id="project-benefactor-name"> Mohammad Shihab</span></p>
+            <p class="project-raised"><span id="project-raised"> Raised: </span><span
+                    id="project-raised-amount">₹10,000</span></p>
+        </div>
+
+        <div class="project-info">
+            <div class="left-section">
+                <h2 class="project-title">Help us help little Shihab and his family.</h2>
+
+                <section id="emergency-appeal" class="emergency-section">
+                    <div class="emergency-content">
+                        <p>
+                            Can you help for the further treatment of this child who has transplanted kidney and liver..
+                            The account information of the child's father is below.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="emergency-appeal" class="emergency-section">
+                    <div class="emergency-content">
+                        <p>വൃക്കയും, കരളും മാറ്റിവെച്ച ഈ കുഞ്ഞിന്റെ തുടർ ചികിത്സക്ക് സഹായിക്കാമോ.. കുട്ടിയുടെ
+                            ഉപ്പയുടെ അക്കൗണ്ട്
+                            വിവരം താഴെ
+                            ചേർക്കുന്നു.</p>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-section">
+                <button class="share-btn" id="share-btn">Share Now</button>
+                <button class="donate-btn">Donate Now</button>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" id="close-modal">&times;</span>
+                        <h3>Share this Project</h3>
+                        <div class="icon-container">
+                            <span class="icon" id="whatsapp"><i class="fa-brands fa-whatsapp"></i></span>
+                            <span class="icon" id="facebook"><i class="fa-brands fa-facebook"></i></span>
+                            <span class="icon" id="twitter"><i class="fa-brands fa-twitter"></i></span>
+                            <span class="icon" id="instagram"><i class="fa-brands fa-instagram"></i></span>
+                            <span class="icon" id="copy-link"><i class="fa fa-copy"></i></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Details Section -->
+                <section id="payment-details" class="payment-details">
+                    <div class="payment-container">
+                        <h3>Support Our Cause</h3>
+                        <p>Your contributions can help save lives. Choose your preferred method to donate:</p>
+
+                        <div class="donation-options">
+                            <!-- QR Code -->
+                            <div class="qr-code" id="qr-code">
+                                <img src="assets/images/projects/qr codes/GooglePay_QR-5.png"
+                                    alt="QR Code for Donation">
+                                <p>Scan the QR Code. Click to enlarge the QR Code.</p>
+                            </div>
+
+                            <!-- UPI Details -->
+                            <div class="upi-details">
+                                <h4>UPI:</h4>
+                                <p id="upi-id"><strong> <span id="upi-id">LALMOHAMMAD21352@okicici</span></strong>
+                                    <span class="copy-icon" onclick="copyText('upi-id')">
+                                        <i class="fa fa-copy"></i>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <!-- Bank Account Details -->
+                            <div class="bank-details">
+                                <h4>Bank Account Details:</h4>
+                                <p>
+                                    <strong>Account Name:</strong> <span id="account-name"> Lal Mohammad</span>
+                                    <span class="copy-icon" onclick="copyText('account-name')">
+                                        <i class="fa fa-copy"></i>
+                                    </span>
+                                </p>
+                                <p>
+                                    <strong>Account Number:</strong> <span id="account-number">4549755926</span>
+                                    <span class="copy-icon" onclick="copyText('account-number')">
+                                        <i class="fa fa-copy"></i>
+                                    </span>
+                                </p>
+                                <p>
+                                    <strong>IFSC Code:</strong> <span id="ifsc-code">KKBK0000631</span>
+                                    <span class="copy-icon" onclick="copyText('ifsc-code')">
+                                        <i class="fa fa-copy"></i>
+                                    </span>
+                                </p>
+                                <p>
+                                    <strong>Bank Name:</strong> <span id="bank-name"> Kotak Mahindra Bank</span>
+                                    <span class="copy-icon" onclick="copyText('bank-name')">
+                                        <i class="fa fa-copy"></i>
+                                    </span>
+                                </p>
+                            </div>
+
+                            <!-- Copy Notification -->
+                            <div id="copy-notification" class="copy-notification">Copied to clipboard!</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- QR Code Modal -->
+                <div id="qrModal" class="qr-modal">
+                    <div class="qr-modal-content">
+                        <span class="close" id="qr-modal-close">&times;</span>
+                        <img src="assets/images/projects/qr codes/GooglePay_QR-5.png" alt="Enlarged QR Code"
+                            id="qr-modal-image">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024-25 HelpfulIndia - Foundation | All rights reserved</p>
+    </footer>
+
+    <script src="assets/js/projectScript.js" defer></script>
+
+</body>
+
+</html>
