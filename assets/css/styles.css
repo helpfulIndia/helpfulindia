@@ -751,28 +751,34 @@ header .logo h1:hover {
     border-radius: 8px;
     display: block;
 }
+
 .project-info {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Ensures top alignment */
-    gap: 20px; /* Space between the two sections */
-    flex-wrap: wrap; /* Ensures responsiveness */
+    align-items: flex-start;
+    /* Ensures top alignment */
+    gap: 20px;
+    /* Space between the two sections */
+    flex-wrap: wrap;
+    /* Ensures responsiveness */
 }
 
-.left-section{
+.left-section {
     flex: 7;
 }
 
 
 @media screen and (max-width: 768px) {
     .project-info {
-        flex-direction: column; /* Stacks sections vertically on smaller screens */
+        flex-direction: column;
+        /* Stacks sections vertically on smaller screens */
     }
 
     .left-section,
     .right-section {
         flex: unset;
-        width: 100%; /* Full width for each section on small screens */
+        width: 100%;
+        /* Full width for each section on small screens */
     }
 }
 
@@ -993,6 +999,43 @@ button:hover {
 .icon:hover {
     color: #d32f2f;
     transform: scale(1.2);
+}
+
+.payment-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.payment-modal-content {
+    position: relative;
+    margin: 10% auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.payment-modal .payment-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.payment-modal .payment-close:hover {
+    color: #000;
 }
 
 /* Payment Details Section */

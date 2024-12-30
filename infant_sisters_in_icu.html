@@ -124,7 +124,7 @@
 
             <div class="right-section">
                 <button class="share-btn" id="share-btn">Share Now</button>
-                <button class="donate-btn">Donate Now</button>
+                <button class="donate-btn" id="donate-btn">Donate Now</button>
 
                 <!-- Modal -->
                 <div id="shareModal" class="modal">
@@ -141,76 +141,98 @@
                     </div>
                 </div>
 
-                <!-- Payment Details Section -->
-                <section id="payment-details" class="payment-details">
-                    <div class="payment-container">
-                        <h3>Support Our Cause</h3>
-                        <p>Your contributions can help save lives. Choose your preferred method to donate:</p>
+                <!-- Payment Modal -->
+                <div id="paymentModal" class="payment-modal">
+                    <div class="payment-modal-content">
+                        <div class="payment-details">
+                            <div class="payment-container">
+                                <span class="payment-close" id="close-payment-modal">&times;</span>
+                                <h3>Support Our Cause</h3>
+                                <p>Your contributions can help save lives. Choose your preferred method to donate:</p>
 
-                        <div class="donation-options">
-                            <!-- QR Code -->
-                            <div class="qr-code" id="qr-code">
-                                <img src="assets/images/projects/qr codes/GooglePay_QR-5.png"
-                                    alt="QR Code for Donation">
-                                <p>Scan the QR Code. Click to enlarge the QR Code.</p>
+                                <div class="donation-options">
+                                    <!-- QR Codes -->
+                                    <div class="qr-code">
+                                        <img src="assets/images/projects/qr codes/AirtelMerchantQR.jpg"
+                                            alt="Airtel QR Code" class="qr-image">
+                                        <p>Scan the QR Code. Click to enlarge the QR Code.</p>
+                                    </div>
+                                    <div class="qr-code">
+                                        <img src="assets/images/projects/qr codes/GooglePay_QR.png"
+                                            alt="Google Pay QR Code" class="qr-image">
+                                        <p>Scan the QR Code. Click to enlarge the QR Code.</p>
+                                    </div>
+
+                                    <!-- QR Code Modal -->
+                                    <div id="qrModal" class="qr-modal">
+                                        <div class="qr-modal-content">
+                                            <span class="close" id="qr-modal-close">&times;</span>
+                                            <img src="" alt="Enlarged QR Code" id="qr-modal-image">
+                                        </div>
+                                    </div>
+
+
+                                    <!-- UPI Details -->
+                                    <div class="upi-details">
+                                        <h4>UPI:</h4>
+                                        <p id="upi-id"><strong>mustakali5886@okhdfcbank</strong>
+                                            <span class="copy-icon" onclick="copyText('upi-id')">
+                                                <i class="fa fa-copy"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+
+                                    <!-- Bank Account Details -->
+                                    <div class="bank-details">
+                                        <h4>Bank Account Details:</h4>
+                                        <p>
+                                            <strong>Account Name:</strong> <span id="account-name">Mustak Ali</span>
+                                            <span class="copy-icon" onclick="copyText('account-name')">
+                                                <i class="fa fa-copy"></i>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <strong>Account Number:</strong> <span id="account-number">501031797669</span>
+                                            <span class="copy-icon" onclick="copyText('account-number')">
+                                                <i class="fa fa-copy"></i>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <strong>IFSC Code:</strong> <span id="ifsc-code">NSPB0000002</span>
+                                            <span class="copy-icon" onclick="copyText('ifsc-code')">
+                                                <i class="fa fa-copy"></i>
+                                            </span>
+                                        </p>
+                                        <p>
+                                            <strong>Bank Name:</strong> <span id="bank-name">NSDL Payments Bank</span>
+                                            <span class="copy-icon" onclick="copyText('bank-name')">
+                                                <i class="fa fa-copy"></i>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
-
-                            <!-- UPI Details -->
-                            <div class="upi-details">
-                                <h4>UPI:</h4>
-                                <p id="upi-id"><strong> <span id="upi-id">LALMOHAMMAD21352@okicici</span></strong>
-                                    <span class="copy-icon" onclick="copyText('upi-id')">
-                                        <i class="fa fa-copy"></i>
-                                    </span>
-                                </p>
-                            </div>
-
-                            <!-- Bank Account Details -->
-                            <div class="bank-details">
-                                <h4>Bank Account Details:</h4>
-                                <p>
-                                    <strong>Account Name:</strong> <span id="account-name"> Lal Mohammad</span>
-                                    <span class="copy-icon" onclick="copyText('account-name')">
-                                        <i class="fa fa-copy"></i>
-                                    </span>
-                                </p>
-                                <p>
-                                    <strong>Account Number:</strong> <span id="account-number">4549755926</span>
-                                    <span class="copy-icon" onclick="copyText('account-number')">
-                                        <i class="fa fa-copy"></i>
-                                    </span>
-                                </p>
-                                <p>
-                                    <strong>IFSC Code:</strong> <span id="ifsc-code">KKBK0000631</span>
-                                    <span class="copy-icon" onclick="copyText('ifsc-code')">
-                                        <i class="fa fa-copy"></i>
-                                    </span>
-                                </p>
-                                <p>
-                                    <strong>Bank Name:</strong> <span id="bank-name"> Kotak Mahindra Bank</span>
-                                    <span class="copy-icon" onclick="copyText('bank-name')">
-                                        <i class="fa fa-copy"></i>
-                                    </span>
-                                </p>
-                            </div>
-
-                            <!-- Copy Notification -->
-                            <div id="copy-notification" class="copy-notification">Copied to clipboard!</div>
                         </div>
-                    </div>
-                </section>
-
-                <!-- QR Code Modal -->
-                <div id="qrModal" class="qr-modal">
-                    <div class="qr-modal-content">
-                        <span class="close" id="qr-modal-close">&times;</span>
-                        <img src="assets/images/projects/qr codes/GooglePay_QR-5.png" alt="Enlarged QR Code"
-                            id="qr-modal-image">
                     </div>
                 </div>
 
+
+                <!-- Copy Notification -->
+                <div id="copy-notification" class="copy-notification">Copied to clipboard!</div>
             </div>
         </div>
+    </section>
+
+    <!-- QR Code Modal -->
+    <!-- <div id="qrModal" class="qr-modal">
+        <div class="qr-modal-content">
+            <span class="close" id="qr-modal-close">&times;</span>
+            <img src="assets/images/projects/qr codes/GooglePay_QR-5.png" alt="Enlarged QR Code" id="qr-modal-image">
+        </div>
+    </div> -->
+
+    </div>
+    </div>
     </section>
 
     <footer>

@@ -70,14 +70,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // open and close qr modal
-    const qrImage = document.getElementById('qr-code');
+    // Get modal elements
+    const qrImages = document.querySelectorAll('.qr-image'); // Select all QR images
     const qrModal = document.getElementById('qrModal');
+    const qrModalImage = document.getElementById('qr-modal-image');
     const qrModalClose = document.getElementById('qr-modal-close');
 
-    // Show modal on QR code click
-    qrImage.addEventListener('click', () => {
-        qrModal.style.display = 'flex';
+    // Show modal with the clicked image
+    qrImages.forEach((image) => {
+        image.addEventListener('click', () => {
+            qrModalImage.src = image.src; // Update modal image source
+            qrModalImage.alt = image.alt; // Update modal image alt text
+            qrModal.style.display = 'flex'; // Show the modal
+        });
     });
 
     // Hide modal on close button click
@@ -110,5 +115,29 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Failed to copy text:', error);
         });
     }
-window.copyText=copyText;
+
+    // Payment modal
+    // Get modal elements
+    const donateBtn = document.getElementById('donate-btn');
+    const paymentModal = document.getElementById('paymentModal');
+    const closePaymentModal = document.getElementById('close-payment-modal');
+
+    // Open modal
+    donateBtn.addEventListener('click', () => {
+        paymentModal.style.display = 'block';
+    });
+
+    // Close modal
+    closePaymentModal.addEventListener('click', () => {
+        paymentModal.style.display = 'none';
+    });
+
+    // Close modal when clicking outside of the modal
+    window.addEventListener('click', (event) => {
+        if (event.target === paymentModal) {
+            paymentModal.style.display = 'none';
+        }
+    });
+
+    window.copyText = copyText;
 });
